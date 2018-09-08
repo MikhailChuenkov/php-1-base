@@ -59,3 +59,14 @@ typings/
 
 # next.js build output
 .next
+
+# phpStorm
+.idea
+
+# other work
+js-2/
+localhost/
+progect-ma-/
+project-ma-new/
+Старое/
+Если проблемы с кодировкой.txt

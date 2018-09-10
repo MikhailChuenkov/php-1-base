@@ -77,22 +77,13 @@ function power($val, $pow) {
 }
 var_dump(power(3,2));
 /**
- * Задание 6
+ * Задание 7
  */
 echo "<p>-----Задание 7-----</p>";
 
 $hour = date(G);
 $minute = date(i);
-/*function getHour ($a, $word) {
-    if ($a == 1 || $a == 21){
-        return $word[0];
-    } else if (($a >= 2 && $a <= 4) || ($a >= 22 && $a <= 24)){
-        return $word[1];
-    } else if (($a == 0) || ($a >= 5 && $a <= 20)){
-        return $word[2];
-    }
 
-}*/
 function getTime ($a, $word) {
     if ($a == 1 || $a == 21 || $a == 31 || $a == 41 || $a == 51){
         return $word[0];

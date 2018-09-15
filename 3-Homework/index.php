@@ -136,14 +136,14 @@ $arrMenu = [
 function getMenu($menu)
 {
     foreach ($menu as $key => $value) {
-        echo "<ul>$key</ul>";
+        echo "<ul>$key";
         if (is_array($value)) {
             $arrLengthValue = count($value);
             for ($i = 0; $i < $arrLengthValue; $i++) {
                 echo "<li class='mList'>$value[$i] </li>";
-
             }
         }
+        echo "</ul>";
     }
 }
 

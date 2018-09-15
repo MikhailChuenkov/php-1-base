@@ -1,0 +1,9 @@
+ul:hover {
+    border: 1px solid mediumpurple;
+}
+.mList {
+    display: none;
+}
+ul:hover .mList {
+    display: block;
+}

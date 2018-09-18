@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $filenameLoad = stristr($_FILES["file"]["name"], ".", true);
                     if ($filenameLoad == $filenameServer) {
                         $filenameLoad .= substr(uniqid('', true), -3);
-                        echo "Совпали имена";
-                        var_dump($filenameLoad . stristr($_FILES["file"]["name"], "."));
+                        //echo "Совпали имена";
+                        //var_dump($filenameLoad . stristr($_FILES["file"]["name"], "."));
                         $filename = UPLOADS_DIR . $filenameLoad . stristr($_FILES["file"]["name"], ".");
                         move_uploaded_file($_FILES["file"]["tmp_name"], $filename);
                     } else {

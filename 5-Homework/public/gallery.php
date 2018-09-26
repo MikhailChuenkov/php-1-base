@@ -16,8 +16,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     redirect("/index.php");
 }
 
-
 $gallery = getGallerySQL();
+$sortGalleryForScorer = getSortGalleryForScorer();
 include TEMPLATES_DIR . "gallery.php";
 
 ?>

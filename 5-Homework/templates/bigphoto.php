@@ -10,6 +10,7 @@
 <body>
 <?php foreach ($data as $photo){?>
     <img src="/img/<?=$photo['name']?>">
+    <p><?="Количество открытий этой картинки: ".$photo['scorer']?></p>
 <?php }?>
 
 </body>

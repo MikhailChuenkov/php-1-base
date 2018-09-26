@@ -8,9 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-<?php foreach ($gallery as $photo_small){?>
-    <a target="_blank " href="/photo.php?id=<?=$photo_small['id']?>"><img src="/img/small/<?=$photo_small['name']?>"></a>
-<?php }?>
+<?php for ($i = 0; $i < count($sortGalleryForScorer); $i++) {
+    foreach ($gallery as $photo_small) {
+      if ($photo_small['scorer'] == $sortGalleryForScorer[$i]){
+        ?>
+      <a target="_blank " href="photo.php?id=<?= $photo_small['id'] ?>">
+        <img src="<?= $photo_small['src_small'] . $photo_small['name_small'] ?>">
+      </a>
+      <p><?= "Scorer: " . $photo_small['scorer'] ?></p>
+    <?php }}}?>
 
 
 <form action="" enctype="multipart/form-data" method="post">

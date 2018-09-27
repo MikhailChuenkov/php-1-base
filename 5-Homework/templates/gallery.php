@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php for ($i = 0; $i < count($sortGalleryForScorer);) {
+<?php for ($i = 0; $i < count($sortGalleryForScorer); $i++) {
     foreach ($gallery as $photo_small) {
       if ($photo_small['scorer'] == $sortGalleryForScorer[$i]){
         ?>
@@ -16,7 +16,7 @@
         <img src="<?= $photo_small['src_small'] . $photo_small['name_small'] ?>">
       </a>
       <p><?= "Scorer: " . $photo_small['scorer'] ?></p>
-    <?php $i++;}}}?>
+    <?php }}}?>
 
 
 <form action="" enctype="multipart/form-data" method="post">

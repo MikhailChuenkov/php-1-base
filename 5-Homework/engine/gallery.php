@@ -1,36 +1,22 @@
 <?php
-function getGallery(){
-    return array_filter(
-        scandir(PUBLIC_DIR . "img"),
-        function($item){
-            return !is_dir(PUBLIC_DIR . "img/" . $item);
-        }
-    );
-}
+require_once ENGINE_DIR . "db.php";
+
 function getGallerySQL(){
-    $conn = mysqli_connect("localhost", "root", "", "litle_shop");
-
-    $sql = "SELECT * FROM litle_shop.photo ";
-
-    if(!$res = mysqli_query($conn, $sql)){
-        var_dump(mysqli_error($conn));
-    }
-    return $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    $sql = "SELECT * FROM photo ORDER BY scorer DESC";
+    return queryAll($sql);
 }
 
-function getSortGalleryForScorer () {
-    $conn = mysqli_connect("localhost", "root", "", "litle_shop");
+function addImage($originalName, $fileSize){
+    $sql = "INSERT INTO photo (name, title, size) VALUE ('{$originalName}', '{$originalName}', '{$fileSize}')";
+    return execute($sql);
+}
 
-    $sql = "SELECT scorer FROM litle_shop.photo";
-    if(!$res = mysqli_query($conn, $sql)){
-        var_dump(mysqli_error($conn));
-    }
+function getImage($id){
+    $sql = "SELECT * FROM photo WHERE id = {$id}";
+    return queryOne($sql);
+}
 
-    $arrScorerAll = mysqli_fetch_all($res, MYSQLI_NUM);
-    $arrScorer = [];
-    foreach ($arrScorerAll as $value) {
-            $arrScorer[] = $value[0];
-    }
-    array_multisort($arrScorer);
-    return $arrScorer;
+function incPhotoScorer($id){
+    $sql = "UPDATE photo SET scorer = scorer + 1 WHERE id = {$id}";
+    return execute($sql);
 }

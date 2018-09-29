@@ -1,8 +1,16 @@
 <?php
-include  __DIR__ . '/../config/main.php';
+header("Content-type: text/html; charset=utf-8");
+
+include __DIR__ . '/../config/main.php';
 include ENGINE_DIR . "gallery.php";
-//$id = $_GET['id'];
+
+if($id = $_GET['id']){
+    incPhotoScorer($id);
+    $image = getImage($id);
+    include TEMPLATES_DIR . "bigphoto.php";
+}
 //var_dump($id);
+/*
 if($id = $_GET['id']){
     $conn = mysqli_connect("localhost", "root", "", "litle_shop");
 
@@ -19,4 +27,4 @@ if($id = $_GET['id']){
     $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
     include TEMPLATES_DIR . "bigphoto.php";
     mysqli_close($conn);
-}
+}*/

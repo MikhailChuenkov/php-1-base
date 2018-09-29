@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<?php foreach ($data as $photo){?>
-    <img src="/img/<?=$photo['name']?>">
-    <p><?="Количество открытий этой картинки: ".$photo['scorer']?></p>
-<?php }?>
+<?php ?>
+    <img src="/img/<?=$image['name']?>">
+    <p><?="Количество открытий этой картинки: ".$image['scorer']?></p>
+<?php ?>
 
 </body>
 </html>

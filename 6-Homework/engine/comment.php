@@ -1,5 +1,4 @@
 <?php
-include ENGINE_DIR . 'db.php';
 
 function sendComment($comment){
     getConnection();

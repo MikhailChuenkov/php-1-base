@@ -9,7 +9,7 @@ include ENGINE_DIR . 'users.php';
 
 $res1 = mathOperation($_GET['num1'],$_GET['num2'], $_GET['operation']);
 $res2 = mathOperation($_POST['num1'],$_POST['num2'], $_POST['operation']);
-
+session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($_POST['commentbtn']){
         $comment = $_POST['comment'];
@@ -21,8 +21,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $login = $_POST['login'];
         $password = $_POST['password'];
         $getUsers = getUsers($login, $password);
-        //var_dump($getUsers['id']);
-        session_start();
         $_SESSION['user_id'] = $getUsers['id'];
         if($getUsers){
             redirect("/myoffice.php");

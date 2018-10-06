@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style/style.css">
-  <title>6-Homework</title>
-</head>
-<body>
 <div id="products">
       <div class="card-product-box">
         <a href="/product.php">
@@ -16,17 +5,17 @@
           <h2><?= $getProduct['title'] ?></h2>
           <h4>$<?= $getProduct['price'] ?></h4>
         </a>
-        <div class="add-flex">
-          <a href="#add" class="add-to-cart">
-            <div class="add-to-cart-cont">
-              <img src="img/Forma 1 copy1.png" alt="cart">
-              Add to Cart
-            </div>
-          </a>
-        </div>
+        <form action="" method="post">
+          <div class="add-flex">
+            <a href="#add" class="add-to-cart">
+              <button class="add-to-cart-cont" name="buybtn" value="<?=$getProduct['id']?>">
+                <img src="img/Forma 1 copy1.png" alt="cart">
+                Add to Cart
+              </button>
+            </a>
+          </div>
+        </form>
       </div>
       <div>Тут описание товара c id = <?= $getProduct['id'] ?></div>
 </div>
-
-</body>
-</html>
+<a href="/">Вернуться на главную</a>

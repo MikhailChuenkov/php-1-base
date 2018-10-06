@@ -19,8 +19,8 @@ function getProductsFromBasketById($id){
     $sql = "SELECT * FROM basket WHERE productId = '{$id}'";
     return queryOne($sql);
 }
-
+/*
 function render($template, $parameters = []){
     extract($parameters);
     include TEMPLATES_DIR . "{$template}.php";
-}
+}*/

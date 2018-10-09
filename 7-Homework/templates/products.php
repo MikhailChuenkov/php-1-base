@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style/style.css">
-  <title>7-Homework</title>
-</head>
-<body>
 <p>Напишите отзыв</p>
 <form action="" method="post">
   <textarea name="comment" cols="40" rows="3" placeholder="Напишите что-нибудь"></textarea>
@@ -41,6 +30,10 @@
       </div>
     <? endforeach; ?>
 </div>
+<p>My office</p>
+<h1>Hello!</h1>
+<h2>You login: <?=$getUserById['login']?></h2>
+<h2>You password: <?=$getUserById['password']?></h2>
 <form action="" method="post">
   <p>Войти в личный кабинет</p>
   <input type="login" name="login" placeholder="Логин">
@@ -66,6 +59,15 @@
     </button>
     <? endforeach; ?>
   <h2>Сумма: <?=$getSummBasket?></h2>
+  <a href="myOrder.php">Оформить заказ</a>
 </form>
-</body>
-</html>
+
+<form action="" method="post" enctype="multipart/form-data">
+  <p>Добавить товар</p>
+  <input type="text" name="title">
+  <input type="text" name="price">
+  <input type="file" name="photo">
+  <button type="submit" name="addProduct" value="1">
+    Добавить товар
+  </button>
+</form>

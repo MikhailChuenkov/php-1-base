@@ -4,3 +4,4 @@ define("PUBLIC_DIR", ROOT_DIR . "public/");
 define("CONFIG_DIR", ROOT_DIR . "config/");
 define("ENGINE_DIR", ROOT_DIR . "engine/");
 define("TEMPLATES_DIR", ROOT_DIR . "templates/");
+define("UPLOADS_DIR", ROOT_DIR . "public/img/");

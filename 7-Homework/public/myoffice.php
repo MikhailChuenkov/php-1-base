@@ -1,16 +1,19 @@
 <?php
 include __DIR__ . '/../config/main.php';
-include ENGINE_DIR . "base.php";
-include ENGINE_DIR . "goods.php";
-include ENGINE_DIR . 'db.php';
-include ENGINE_DIR . 'users.php';
+require_once ENGINE_DIR . "autoload.php";
 
 session_start();
 $userId = $_SESSION['user_id'];
+$getOrdersUser = getOrdersUser($userId);
+//var_dump($getOrdersUser);
 
+$getProductByOrderId = getProductByOrderId($getOrdersUser);
+//var_dump($getProductByOrderId);
 $getUserById = getUserById($userId);
+
 $parameters = [
     'getUserById' => $getUserById,
+    'getProductByOrderId' => $getProductByOrderId,
+    'userId' => $userId,
 ];
-
 render("myoffice", $parameters);

@@ -14,6 +14,7 @@ $getUserById = getUserById($userId);
 $parameters = [
     'getUserById' => $getUserById,
     'getProductByOrderId' => $getProductByOrderId,
+    'userId' => $userId,
 ];
 echo json_encode(['success' => 'ok', 'message' => 'Заказ удален']);
 render("myoffice", $parameters);

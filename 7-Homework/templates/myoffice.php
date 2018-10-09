@@ -16,7 +16,7 @@
     <?endforeach; ?>
   <br>
   <h2>Сумма: $<?=$item[0]['orderSumm']?></h2>
-  <button id="clear_order" data-id="<?=$orderId?>">
+  <button id="clear_order" data-id="<?=$item[0]['orderId']?>">
     Удалить заказ
   </button>
   <br>

@@ -68,3 +68,11 @@ function clearBasket($getBasket){
     }
 }
 
+function delOrder($orderId){
+    $sql = "DELETE FROM orders WHERE id = '{$orderId}'";
+    return execute($sql);
+}
+function delOrderProducts($orderId){
+    $sql = "DELETE FROM orderProducts WHERE orderId = '{$orderId}'";
+    return execute($sql);
+}

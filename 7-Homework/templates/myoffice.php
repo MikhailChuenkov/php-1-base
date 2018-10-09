@@ -6,20 +6,24 @@
 <h3>История моих заказов</h3>
 
 <? foreach ($getProductByOrderId as $item):?>
-  <p>Это старый заказ</p>
+  <hr>
+  <p>Ваш заказ №<?=$item[0]['orderId']?></p>
     <?php
-    $SummOrder = 0;
     foreach ($item as $ProductsFromOrderProduct): ?>
     <h3><?=$ProductsFromOrderProduct['productName']?></h3>
     <h3>Количество: <?=$ProductsFromOrderProduct['countProduct']?></h3>
     <h3>Цена: $<?=$ProductsFromOrderProduct['productSumm']?></h3>
     <?endforeach; ?>
-  <h2>Сумма: <?=$ProductsFromOrderProduct['orderSumm']?></h2>
+  <br>
+  <h2>Сумма: $<?=$item[0]['orderSumm']?></h2>
   <button id="clear_order" data-id="<?=$orderId?>">
     Удалить заказ
   </button>
+  <br>
+  <br>
 <? endforeach;?>
-
+<br>
+<br>
 <a href="/">Вернуться на главную</a>
 
 <script>

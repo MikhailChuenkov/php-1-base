@@ -103,6 +103,7 @@ $parameters = [
     'getSummBasket' => $getSummBasket,
     'getUserById' => $getUserById,
 ];
+
 render('products', $parameters);
 
 

@@ -13,11 +13,8 @@
     <h3><?=$ProductsFromOrderProduct['productName']?></h3>
     <h3>Количество: <?=$ProductsFromOrderProduct['countProduct']?></h3>
     <h3>Цена: $<?=$ProductsFromOrderProduct['productSumm']?></h3>
-    <?
-    $SummOrder += $ProductsFromOrderProduct['productSumm'];
-    $orderId = $ProductsFromOrderProduct['orderId'];
-    endforeach; ?>
-  <h2>Сумма: <?=$SummOrder?></h2>
+    <?endforeach; ?>
+  <h2>Сумма: <?=$ProductsFromOrderProduct['orderSumm']?></h2>
   <button id="clear_order" data-id="<?=$orderId?>">
     Удалить заказ
   </button>

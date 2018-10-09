@@ -47,15 +47,16 @@ function getBasket(){
     $sql = "SELECT * FROM basket";
     return queryAll($sql);
 }
-function addOrderProducts($getBasket, $getOrderId)
+function addOrderProducts($getBasket, $getOrderId, $getSummBasket)
 {
     for ($i = 0; $i < count($getBasket); $i++) {
         $productId = $getBasket[$i]['productId'];
         $productName = $getBasket[$i]['productName'];
         $countProduct = $getBasket[$i]['productCount'];
         $productSumm = $getBasket[$i]['productSumm'];
-        $sql = "INSERT INTO orderProducts (orderId, productId, countProduct, productName, productSumm) 
-    VALUE ('{$getOrderId['id']}', '{$productId}', '{$countProduct}', '{$productName}', '{$productSumm}')";
+        $sql = "INSERT INTO orderProducts (orderId, productId, countProduct, productName, productSumm, orderSumm) 
+    VALUE ('{$getOrderId['id']}', '{$productId}', '{$countProduct}', '{$productName}', '{$productSumm}', 
+    '{$getSummBasket}')";
         execute($sql);
     }
 }

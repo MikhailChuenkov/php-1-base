@@ -15,11 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $addOrder = addOrder($userId);
         $getOrderId = getLastOrderId();
         $getBasket = getBasket();
-        //var_dump($getBasket);
-        addOrderProducts($getBasket, $getOrderId);
+        $getSummBasket = getSummBasket($getSummBasketByProduct);
+        addOrderProducts($getBasket, $getOrderId, $getSummBasket);
         clearBasket($getBasket);
-
-        //redirect($_SERVER["HTTP_REFERER"]);
         redirect("/index.php");
     }
 }
